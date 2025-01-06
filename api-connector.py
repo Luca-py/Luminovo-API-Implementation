@@ -75,13 +75,13 @@ def transform_data(file_path):
         raise
 
 def send_data_to_api(payload):
-    """Send transformed data to Luminovo API."""
+    """Send transformed data to Luminovo API"""
     try:
         headers = {"Authorization": f"Bearer {API_KEY}", "Content-Type": "application/json"}
         response = requests.post(API_URL, headers=headers, json=payload)
 
         if response.status_code == 200:
-            logging.info("Data successfully synced to Luminovo.")
+            logging.info("Data successfully synced to Luminovo")
         else:
             logging.error(f"API Error: {response.status_code} - {response.text}")
             response.raise_for_status()
@@ -90,9 +90,9 @@ def send_data_to_api(payload):
         raise
 
 def main():
-    """Main function to handle data sync."""
+    """Main function to handle data sync"""
     try:
-        logging.info("Starting stock sync process.")
+        logging.info("Starting stock sync process")
         
         # Transform the data
         payload = transform_data(INPUT_FILE)
@@ -100,7 +100,7 @@ def main():
         # Send to API
         send_data_to_api(payload)
 
-        logging.info("Stock sync process completed successfully.")
+        logging.info("Stock sync process completed successfully")
     except Exception as e:
         logging.error(f"Stock sync failed: {e}")
 
