@@ -13,7 +13,7 @@ The script reads stock information from a daily exported Excel file and sends th
 ## Workflow
 
 1. **Daily Execution**:
-   - The script processes the `Availability.xlsx` file, which must be placed in the configured directory (`C:\LuminovoSync\` by default).
+   - The script processes the `Availability.xlsx` file, which must be placed in the configured directory.
    - The script transforms the data into a JSON payload and sends it to the API.
 
 2. **Scheduled Automation**:
